@@ -1,4 +1,5 @@
 FROM ubuntu:18.04
+MAINTAINER Suchat Sujalarnlap Developer
 
 # apt-get and system utilities
 RUN apt-get update && apt-get install -y \
@@ -6,6 +7,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Configure timezone and locale
+ENV PYTHONUNBUFFERED 1
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LANG C.UTF-8
 ENV LC_ALL C.UTF-8

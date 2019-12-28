@@ -2,7 +2,7 @@ version: "3"
 
 services:
   app:
-    image: docker.io/ossuchas/djangotest:v1.0.0
+    image: docker.io/ossuchas/djangotest:v2.0.0
     build:
       context: .
       dockerfile: ./Dockerfile
