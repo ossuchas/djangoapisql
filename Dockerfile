@@ -60,5 +60,6 @@ COPY . .
 
 EXPOSE 8000
 
-#CMD ["python3", "app.py"]
+RUN chmod +x entry_point.sh
+CMD [ "./entry_point.sh" ]
 
