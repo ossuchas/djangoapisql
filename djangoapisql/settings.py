@@ -25,7 +25,7 @@ SECRET_KEY = 'c&7%l9czqz&u-4(cx!hi9i7@0+%x!bdv-n4&^7wuw%4v^a42wo'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.4.11', '127.0.0.1', 'locahost']
+ALLOWED_HOSTS = ['192.168.4.11', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
+    'rest_framework',
+    'flight',
 ]
 
 MIDDLEWARE = [
@@ -47,7 +50,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'djangoapisql.urls'
 
